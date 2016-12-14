@@ -30,4 +30,4 @@ This option defines the maximum amount or quantity that can be ordered. If the q
 ### Max. free shipping amount
 This option defines the maximum amount or quantity that will be available for free shipping. If the quantity for this product in the shopping cart exceeds this threshold, it will not be eligible for free shipping anymore. This option will be ignored if "Max. cart amount" is defined (i.e. > `0`).
 ### Valid for the following countries
-Comma-separated country codes ([ISO_3166-1_alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)) define for which countries free shipping is valid (e.g. `DE,AT,CH` for Germany, Austria, and Switzerland).
+Comma-separated country codes ([ISO 3166-1 alpha-3](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3)) define for which countries free shipping is valid (e.g. `DE,AT,CH` for Germany, Austria, and Switzerland).
