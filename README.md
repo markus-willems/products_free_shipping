@@ -1,6 +1,6 @@
 # products_free_shipping
 
-products_free_shipping module for modified eCommerce Shopsoftware 2.0.1.0 rev 10403
+products_free_shipping module for modified eCommerce Shopsoftware 2.0.1.0 rev 10403 based on http://www.modified-shop.org/forum/index.php?topic=12704.0
 
 ##Install
 
