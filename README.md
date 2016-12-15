@@ -22,12 +22,18 @@ and replace with
 
 ##Usage
 
-In "Edit Product" there will be a new "Free shipping options" box. There, four options are available:
-### Free shipping allowed?
+### Edit Product
+In "Edit Product" there will be a new "Free shipping options" box with four available options.
+#### Free shipping allowed?
 If this option is set, the product will be eligible for free shipping and will be affected by the next options.
-### Max. cart amount
+#### Max. cart amount
 This option defines the maximum amount or quantity that can be ordered. If the quantity for this product in the shopping cart exceeds this threshold, it will be automatically set to the defined amount.
-### Max. free shipping amount
+#### Max. free shipping amount
 This option defines the maximum amount or quantity that will be available for free shipping. If the quantity for this product in the shopping cart exceeds this threshold, it will not be eligible for free shipping anymore. This option will be ignored if "Max. cart amount" is defined (i.e. > `0`).
-### Valid for the following countries
+#### Valid for the following countries
 Comma-separated country codes ([ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)) define for which countries free shipping is valid (e.g. `DE,AT,CH` for Germany, Austria, and Switzerland).
+
+
+### Edit Shipping Method
+#### No mixed products
+If this option is set to `Yes` (standard value) then free shipping will not be offered if *all* products in the shopping cart are not eligible for free shipping.
