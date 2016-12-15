@@ -41,4 +41,6 @@ define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_NUMBER_ZONES_TITLE' , 'Anzahl der Z
 define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_NUMBER_ZONES_DESC' , 'Anzahl der bereitgestellten Zonen');
 define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_DISPLAY_TITLE' , 'Anzeige aktivieren');
 define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_DISPLAY_DESC' , 'M&ouml;chten Sie anzeigen, wenn kein Versand in das Land m&ouml;glich ist bzw. keine Versandkosten berechnet werden konnten?');
+define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_SINGLE_PRODUCT_TITLE' , 'Keine gemischten Artikel');
+define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_SINGLE_PRODUCT_DESC' , 'M&ouml;chten Sie, dass die Versandkostenfreiheit nicht f&uuml;r gemischte (versandkostenfreie und normale) Artikel im Warenkorb gilt?');
 ?>

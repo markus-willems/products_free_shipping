@@ -28,6 +28,7 @@
       $this->icon ='';   // change $this->icon =  DIR_WS_ICONS . 'shipping_ups.gif'; to some freeshipping icon
       $this->sort_order = MODULE_SHIPPING_PRODUCTSFREESHIPPING_SORT_ORDER;
       $this->enabled = ((MODULE_SHIPPING_PRODUCTSFREESHIPPING_STATUS == 'True') ? true : false);
+      $this->no_mixed_products = ((MODULE_SHIPPING_PRODUCTSFREESHIPPING_SINGLE_PRODUCT == 'True') ? true : false);
     }
 
     function getValidCountries($products_id = 0) {
@@ -50,6 +51,8 @@
         }
       }
 
+      
+
       for ($i=1; $i<=sizeof($valid_products); $i++) {
         $countries_table = $this->getValidCountries($valid_products[$i-1]["products_id"]);
         $countries_table  = preg_replace("'[\r\n\s]+'",'',$countries_table);
@@ -63,6 +66,14 @@
 
       $this->quotes = array('id'      => $this->code,
                             'module'  => $this->title);
+
+      if($this->no_mixed_products) {
+        $products_in_shopping_cart = sizeof($order->products);
+        $free_products = sizeof($_SESSION["PRODUCTS_FREE_SHIPPING"]);
+        if($free_products < $products_in_shopping_cart) {
+          $this->enabled = false;
+        }
+      }
 
       if ($dest_zone == 0) {
         $this->enabled = false;
@@ -90,6 +101,7 @@
     function install() {
       xtc_db_query("insert into " . TABLE_CONFIGURATION . " (configuration_key, configuration_value, configuration_group_id, sort_order, set_function, date_added) values ('MODULE_SHIPPING_PRODUCTSFREESHIPPING_STATUS', 'True', '6', '7', 'xtc_cfg_select_option(array(\'True\', \'False\'), ', now())");
       xtc_db_query("insert into " . TABLE_CONFIGURATION . " (configuration_key, configuration_value, configuration_group_id, sort_order, set_function, date_added) values ('MODULE_SHIPPING_PRODUCTSFREESHIPPING_DISPLAY', 'True', '6', '7', 'xtc_cfg_select_option(array(\'True\', \'False\'), ', now())");
+      xtc_db_query("insert into " . TABLE_CONFIGURATION . " (configuration_key, configuration_value, configuration_group_id, sort_order, set_function, date_added) values ('MODULE_SHIPPING_PRODUCTSFREESHIPPING_SINGLE_PRODUCT', 'True', '6', '7', 'xtc_cfg_select_option(array(\'True\', \'False\'), ', now())");
       xtc_db_query("insert into " . TABLE_CONFIGURATION . " (configuration_key, configuration_value, configuration_group_id, sort_order, date_added) values ('MODULE_SHIPPING_PRODUCTSFREESHIPPING_SORT_ORDER', '0', '6', '4', now())");
     }
 
@@ -100,7 +112,8 @@
     function keys() {
       $keys = array('MODULE_SHIPPING_PRODUCTSFREESHIPPING_STATUS',
                     'MODULE_SHIPPING_PRODUCTSFREESHIPPING_SORT_ORDER',
-                    'MODULE_SHIPPING_PRODUCTSFREESHIPPING_DISPLAY'
+                    'MODULE_SHIPPING_PRODUCTSFREESHIPPING_DISPLAY',
+                    'MODULE_SHIPPING_PRODUCTSFREESHIPPING_SINGLE_PRODUCT'
                     );
 
       return $keys;

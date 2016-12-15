@@ -41,5 +41,7 @@ define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_NUMBER_ZONES_TITLE' , 'Number of zo
 define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_NUMBER_ZONES_DESC' , 'Number of zones to use');
 define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_DISPLAY_TITLE' , 'Enable Display');
 define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_DISPLAY_DESC' , 'Do you want to display, if shipping to destination is not possible or if shipping costs cannot be calculated?');
+define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_SINGLE_PRODUCT_TITLE' , 'No mixed products');
+define('MODULE_SHIPPING_PRODUCTSFREESHIPPING_SINGLE_PRODUCT_DESC' , 'Do you want to not allow free shipping for mixed (free shipping and normal) products in the shopping cart?');
 
 ?>
