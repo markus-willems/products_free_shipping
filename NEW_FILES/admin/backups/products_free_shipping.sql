@@ -5,4 +5,4 @@ CREATE TABLE `products_free_shipping` (
   `max_free_shipping_cart` int(11) DEFAULT '0',
   `max_free_shipping_amount` int(11) DEFAULT '0',
   KEY `idx_products_id` (`products_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM ;

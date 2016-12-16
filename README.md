@@ -4,12 +4,12 @@ products_free_shipping module for modified eCommerce Shopsoftware 2.0.1.0 rev 10
 
 ##Install
 
-0. Make backup of DB + FTP
-1. Import products_free_shipping.sql
+1. Make backup of DB + FTP
 2. Transfer files from NEW_FILES folder into the root folder of the shop
-3. Backend > Modules > Class Extensions Modules: install products_free_shipping (categories) and listing_product_extra (product)
-4. Backend > Modules > Shipping Methods: install productsfreeshipping
-5. In /templates/**\<active_template\>**/module/product_info/product_info_tabs_v1.html:
+3. Backend > Tools > Database Manager: select products_free_shipping.sql and restore/import it
+4. Backend > Modules > Class Extensions Modules: install products_free_shipping (categories) and listing_product_extra (product)
+5. Backend > Modules > Shipping Methods: install productsfreeshipping
+6. In /templates/**\<active_template\>**/module/product_info/product_info_tabs_v1.html:
 
 search for
 ```
