@@ -32,16 +32,6 @@ if(MODULE_CATEGORIES_PRODUCTS_FREE_SHIPPING_STATUS == "true") {
         return $cart_amount;
     }
 
-    function free_shipping_allowed($products_id, $qty) {
-        $free_shipping_allowed = false;
-        $free_shipping_allowed_query = xtc_db_query("SELECT max_free_shipping_amount FROM ".TABLE_PRODUCTS_FREE_SHIPPING." WHERE products_id = '".$products_id."'");
-        $free_shipping_allowed_result = xtc_db_fetch_array($free_shipping_allowed_query);
-        if(!empty($free_shipping_allowed_result) && $qty <= $free_shipping_allowed_result["max_free_shipping_amount"]) {
-            $free_shipping_allowed = true;
-        }
-        return $free_shipping_allowed;
-    }
-
     function check_allowed_amount($products_id, $qty) {
         $check_products_query = xtc_db_query("SELECT free_shipping, max_free_shipping_cart FROM ".TABLE_PRODUCTS_FREE_SHIPPING." WHERE products_id = '".$products_id."'");
         $check_product = xtc_db_fetch_array($check_products_query);
