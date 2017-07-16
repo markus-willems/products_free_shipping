@@ -2,7 +2,7 @@
 
 products_free_shipping module for modified eCommerce Shopsoftware 2.0.1.0 rev 10403 based on [MODUL: Zusatzfelder in der Artikel-Bearbeitung für versandkostenfreie Artikel](http://www.modified-shop.org/forum/index.php?topic=12704.0)
 
-##Install
+## Install
 
 1. Make backup of DB + FTP
 2. Transfer files from NEW_FILES folder into the root folder of the shop
@@ -12,15 +12,15 @@ products_free_shipping module for modified eCommerce Shopsoftware 2.0.1.0 rev 10
 6. In /templates/**\<active_template\>**/module/product_info/product_info_tabs_v1.html:
 
 search for
-```
+```php
 {if $PRODUCTS_SHIPPING_LINK}{$PRODUCTS_SHIPPING_LINK}{/if}
 ```
 and replace with
-```
+```php
 {if $PRODUCTS_FREE_SHIPPING != ""}{$PRODUCTS_FREE_SHIPPING}{else}{if $PRODUCTS_SHIPPING_LINK}{$PRODUCTS_SHIPPING_LINK}{/if}{/if}
 ```
 
-##Usage
+## Usage
 
 ### Edit Product
 In "Edit Product" there will be a new "Free shipping options" box with four available options.
